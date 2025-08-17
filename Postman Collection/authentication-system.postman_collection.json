@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "19fc26ef-b34e-4fd0-9003-e7e68ca52be2",
+		"name": "authentication-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38161430"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWY3OTU5Mjk3NDRiZmFiZjY2ZWZlMCIsImlhdCI6MTc1NTI5OTQxNywiZXhwIjoxNzU1Mzg1ODE3fQ.n2vsNt9sMF6uHbWV8TVqcKUXCWAqRgUlwWa1Sm8UU5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Jesse Pinkman\",\r\n  \"email\": \"jesse09@example.com\",\r\n  \"phone\": \"+8801734567889\",\r\n  \"password\": \"YeahBitch#96\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyOtp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"68a1244a8b5e7eec17d2eef3\",\r\n  \"otp\": \"665298\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/verify-phone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"verify-phone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTEyNDRhOGI1ZTdlZWMxN2QyZWVmMyIsImVtYWlsIjoiamVzc2UwOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTM5MTA1MCwiZXhwIjoxNzU1NDc3NDUwfQ.REzbvIaIgusFr4t9EjazG0erg1JgE33Zu5jlYohr-sA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"verify-email"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTEyNDRhOGI1ZTdlZWMxN2QyZWVmMyIsImVtYWlsIjoiamVzc2UwOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTM5MTA1MCwiZXhwIjoxNzU1NDc3NDUwfQ.REzbvIaIgusFr4t9EjazG0erg1JgE33Zu5jlYohr-sA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTEyNDRhOGI1ZTdlZWMxN2QyZWVmMyIsImlhdCI6MTc1NTM5MTc3MCwiZXhwIjoxNzU1NDc4MTcwfQ.DbUQR9jOXDVGe-goBzdmC7V7Ks2YNmKCUsvV7DgcQzE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"phone\": \"+8801734567889\",\r\n  \"password\": \"YeahBitch#96\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTEyNDRhOGI1ZTdlZWMxN2QyZWVmMyIsImlhdCI6MTc1NTM5MTc3MCwiZXhwIjoxNzU1NDc4MTcwfQ.DbUQR9jOXDVGe-goBzdmC7V7Ks2YNmKCUsvV7DgcQzE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/auth/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"phone\": \"+8801734567889\",\r\n  \"otp\": \"529817\",\r\n  \"newPassword\": \"NewPassword#123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/forgot-password/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"forgot-password",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
